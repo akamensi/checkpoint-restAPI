@@ -1,0 +1,33 @@
+1/cree une dossier
+2/ouvrir cmd puis code . entre pour lancer VScode
+3/npm init (pour cree le fichier {package.json})
+4/installer les extensions suivants:
+    *express
+    *mongoose
+    *nodemon et le mettre dans devDependencies (npm i nodemon -D)
+5/cree un fichier Server.js pour creer notre serveur avec express
+6/cree nos 4 dossiers:
+   1: dossier Config avec un fichier connectDB.js pour connect notre DB avec le serveur en utillisant mongoose.connet() pour cree la function et get the link of DB
+   2: dossier Models avec un fichier nom.js pour creer notre model avec mongoose et pour creer le models,
+      if faut cree le schema avec mongoose.schema({name:string,...}) et puis la creation de collection avec mongoose.model('nom de collection',schema).
+   3: dossier Routes avec un fichier nom.js pour creer nos mini routes avec contactRouter() apres qu'on a donneé la permission de la app avec .use()
+************** a cette etape dans notre fichier Server.js:
+                     -serveur is running
+                     -connectDB() est connecté
+                     -app.use(express.json())
+                     -app.use('/api/nom',cantactRouter)
+   4: dossier Controlles avec un fichier nom.js pour creer et organiser les models  
+7/ passer a notre partie front et on cree notre app react:
+    npx create-react-app client sous notre grand projet
+8/ installer concurrently pour ouvrir 2 terminal un pour le back et l'autre pour le front
+9/ aller au package.json pour changer notre script avec le key start:
+   "start": "concurrently \"command1 arg\" \"command2 arg\""
+   on change : "start" avec "dev"
+             : command1 arg avec npx nodemon Server
+             : command2 arg avec cd client && npm start (il faut changer la direction vers le dossier front "cd client")
+10/ aller au client package.json pour ajouter une nouvelle key:
+    "proxy" : "http://localhost:5000" (pour lier le front avec le back pour on peut consommer nos API )
+11/ npm run dev (pour commencer)
+12/cd client
+13/ npm i redux react-redux redux-thunk react-router-dom bootsrap react-bootstrap
+14/
